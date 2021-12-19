@@ -248,4 +248,127 @@ char nd_sleighride[] = {'e', 'e', 'e',
 
 float speed_sleighride = 1.1;
 
+/********************************************************************
+ * O COME ALL YE FAITHFUL *
+ ********************************************************************/
+
+uint16_t m_faithful[]= {NOTE_C4, NOTE_C4, NOTE_G3, NOTE_C4, NOTE_D4, 
+                          NOTE_G3, NOTE_E4, NOTE_D4, NOTE_E4, NOTE_F4,
+                          NOTE_E4, NOTE_D4, NOTE_C4, NOTE_C4, NOTE_B4,
+                          NOTE_A4, NOTE_B4, NOTE_C4, NOTE_D4, NOTE_E4,
+                          NOTE_B4, NOTE_A4, NOTE_G3, NOTE_G3};
+                                                                                                                                   
+char nd_faithful[] = {'q', 'h', 'q', 'q', 'h',
+                        'h', 'q', 'q', 'q', 'q',
+                        'h', 'q', 'q', 'h', 'q',
+                        'q', 'q', 'q', 'q', 'q',
+                        'h', 'p', 'e', 'w'};
+
+uint8_t len_faithful = 24;
+
+float speed_faithful = 1.2;
+
+/********************************************************************
+ * HARK THE HAROLD ANGELS SING *
+ ********************************************************************/
+
+uint16_t m_hark[]= {NOTE_D3, NOTE_G3, NOTE_G3, NOTE_FS3, NOTE_G3,
+                    NOTE_B4, NOTE_B4, NOTE_A4, NOTE_D4, NOTE_D4,
+                    NOTE_D4, NOTE_C4, NOTE_B4, NOTE_A4, NOTE_B4,
+                    NOTE_D3, NOTE_G3, NOTE_G3, NOTE_AS3, NOTE_G3,
+                    NOTE_B4, NOTE_B4, NOTE_A4, NOTE_D4, NOTE_A4,
+                    NOTE_A4, NOTE_FS3, NOTE_FS3, NOTE_E3, NOTE_D3};
+                                                                                                                                   
+char nd_hark[] = {'q', 'q', 'p', 'e', 'q',
+                  'q', 'q', 'q', 'q', 'q',
+                  'p', 'e', 'q', 'q', 'h',
+                  'q', 'q', 'p', 'e', 'q',
+                  'q', 'q', 'q','q', 'q',
+                  'p', 'e', 'q', 'q', 'h'};
+
+uint8_t len_hark = 30;
+
+float speed_hark = 1.2;
+
+/********************************************************************
+ * GO TELL IT ON THE MOUNTAIN *
+ ********************************************************************/
+
+uint16_t m_mountain[]= {NOTE_A4, NOTE_A4, NOTE_G3, NOTE_F3, NOTE_CS3,
+                        NOTE_B3, NOTE_F3, NOTE_G3, NOTE_G3, NOTE_G3,
+                        NOTE_F3, NOTE_G3, NOTE_A4, NOTE_C4, NOTE_D4,
+                        NOTE_C4, NOTE_A4, NOTE_A4, NOTE_G3, NOTE_F3,
+                        NOTE_CS3, NOTE_C3, NOTE_F3, NOTE_B4, NOTE_A4,
+                        NOTE_A4, NOTE_G3, NOTE_F3, NOTE_G3, NOTE_F3};
+                                                                                                                                   
+char nd_mountain[] = {'h', 'p', 'e', 'p', 'e',
+                      'h', 'h', 'e', 'q', 'e',
+                      'q', 'q', 'q', 'q', 'q',
+                      'q', 'h', 'p', 'e', 'p',
+                      'e', 'h', 'q', 'q', 'q', 
+                      'q', 'p', 'e', 'q', 'o'};
+
+uint8_t len_mountain = 30;
+
+float speed_mountain = 1;
+
+/********************************************************************
+ * HOLLY JOLLY *
+ ********************************************************************/
+
+uint16_t m_hollyjolly[]= {NOTE_A4, NOTE_A4, NOTE_G3, NOTE_F3, NOTE_CS3,
+                        NOTE_E3, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_B4,
+                        NOTE_B4, NOTE_A4, NOTE_E4, 0, NOTE_E4,
+                        NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_G4,
+                        NOTE_B3, 0, NOTE_B4, NOTE_B4, NOTE_B4,
+                        NOTE_A4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_E4,
+                        NOTE_G4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_E4};
+                                                                                                                                   
+char nd_hollyjolly[] = {'e', 'e', 'q', 'q', 'q',
+                        'q', 'q', 'q', 'q', 'e',
+                        'e', 'q', 'q', 'q', 'q',
+                        'h', 'h', 'q', 'q', 'p',
+                        'e', 'q', 'q', 'p', 'e',
+                        'q', 'q', 'q', 'q', 'h'};
+
+uint8_t len_hollyjolly = 30;
+
+float speed_hollyjolly = 1.4;
+
+/********************************************************************
+ * O CHRISTMAS TREE *
+ ********************************************************************/
+
+uint16_t m_christmastree[]= {NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_A4, 
+                             NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_A4,
+                             NOTE_B4, NOTE_C4, NOTE_FS3, NOTE_A4, NOTE_G3,
+                             NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_A4,
+                             NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_A4, 
+                             NOTE_B4, NOTE_C4, NOTE_FS3, NOTE_A4, NOTE_G3,
+                             0, NOTE_D4, NOTE_D4, NOTE_B4, NOTE_E4, NOTE_D4, 
+                             NOTE_D4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4,
+                             NOTE_A4, NOTE_D4, NOTE_C4, NOTE_C4, NOTE_B4, 
+                             NOTE_B4, NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3,
+                             NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4,
+                             NOTE_A4, NOTE_B4, NOTE_C4, NOTE_FS3, NOTE_A4,
+                             NOTE_G3};
+                                                                                                                                   
+char nd_christmastree[] = {'q', 'p', 'e', 'q', 'q',
+                           'p', 'e', 'p', 'e', 'q',
+                           'q', 'q', 'q', 'q', 'q', 
+                           'q', 'p', 'e', 'q', 'q', 
+                           'p', 'e', 'p', 'e', 'q', 
+                           'q', 'q', 'q', 'q', 'q', 
+                           'q', 'q', 'e', 'e', 'p',
+                           'e', 'e', 'e', 'p', 'e', 
+                           'e', 'e', 'p', 'e', 'e', 
+                           'e', 'q', 'q', 'p', 'e', 
+                           'q', 'q', 'p', 'e', 'p', 
+                           'e', 'e', 'e', 'q', 'q', 
+                           'q', 'q'};
+
+uint8_t len_christmastree = 66;
+
+float speed_christmastree = 1;
+
 #endif // PITCHES_H
