@@ -61,7 +61,7 @@ void loop() {
 
       // Enter power down state with ADC and BOD module disabled.
       LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);
-      delay(2000);
+      //delay(2000);
 
       currState = WAKEUP;
       break;
