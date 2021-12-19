@@ -8,15 +8,18 @@
 enum state {
   SLEEP,
   WAKEUP,
+  LIGHTSHOW,
   JINGLE,
   RUDOLPH,
   WONDTIME,
   HLYNGHT,
-  JOY
+  JOY,
+  SLEIGH,
 } currState;
 
 bool leftButtonPressed;
 bool rightButtonPressed;
+//uint8_t pixeln = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -46,9 +49,7 @@ void loop() {
       CircuitPlayground.speaker.enable(false);
 
       //turn off all the LEDs
-      for (int p = 0; p < 10; p++){
-        CircuitPlayground.setPixelColor(p, 0, 0, 0);
-      }
+      CircuitPlayground.clearPixels();
 
       // Enter power down state with ADC and BOD module disabled.
       //LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);
@@ -68,11 +69,27 @@ void loop() {
         CircuitPlayground.setPixelColor(p, 0, 255, 0);
         delay(50);
       }
-      for (int p = 0; p < 10; p++){
-        CircuitPlayground.setPixelColor(p, 0, 0, 0);
-      }
+      CircuitPlayground.clearPixels();
 
-      currState = JINGLE;
+      currState = LIGHTSHOW;
+      break;
+
+    case LIGHTSHOW:
+      if (leftButtonPressed)
+      {
+        delay(DEBOUNCE);
+        CircuitPlayground.clearPixels();
+        currState = JINGLE;
+      }
+      else
+      {
+//          CircuitPlayground.setPixelColor(pixeln++, CircuitPlayground.colorWheel(25 * pixeln));
+//          if (pixeln == 11) 
+//          {
+//            pixeln = 0;
+//            CircuitPlayground.clearPixels();
+//          }
+      }
       break;
       
     case JINGLE:
@@ -80,8 +97,7 @@ void loop() {
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
-        for (int p = 0; p < 10; p++)
-          CircuitPlayground.setPixelColor(p, 0, 0, 0);
+        CircuitPlayground.clearPixels();
         currState = RUDOLPH;
       }   
       else if (rightButtonPressed)
@@ -95,8 +111,7 @@ void loop() {
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
-        for (int p = 0; p < 10; p++)
-          CircuitPlayground.setPixelColor(p, 0, 0, 0);
+        CircuitPlayground.clearPixels();
         currState = WONDTIME;
       }
       else if (rightButtonPressed)
@@ -110,8 +125,7 @@ void loop() {
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
-        for (int p = 0; p < 10; p++)
-          CircuitPlayground.setPixelColor(p, 0, 0, 0);
+        CircuitPlayground.clearPixels();
         currState = HLYNGHT;
       }
       else if (rightButtonPressed)
@@ -124,8 +138,7 @@ void loop() {
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
-        for (int p = 0; p < 10; p++)
-          CircuitPlayground.setPixelColor(p, 0, 0, 0);
+        CircuitPlayground.clearPixels();
         currState = JOY;
       }
       else if (rightButtonPressed)
@@ -138,13 +151,25 @@ void loop() {
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
-        for (int p = 0; p < 10; p++)
-          CircuitPlayground.setPixelColor(p, 0, 0, 0);
-        currState = JINGLE;
+        CircuitPlayground.clearPixels();
+        currState = SLEIGH;
       }
       else if (rightButtonPressed)
       {
         playSong(m_joy, nd_joy, len_joy, speed_joy, 1);
+      }
+      break;
+    case SLEIGH:
+      CircuitPlayground.setPixelColor(5, 255, 255, 0);
+      if (leftButtonPressed)
+      {
+        delay(DEBOUNCE);
+        CircuitPlayground.clearPixels();
+        currState = JINGLE;
+      }
+      else if (rightButtonPressed)
+      {
+        playSong(m_sleighride, nd_sleighride, len_sleighride, speed_sleighride, 0);
       }
       break;
   }

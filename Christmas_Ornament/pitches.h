@@ -200,18 +200,18 @@ float speed_holynight = 1;
  ********************************************************************/
 
 // Melody notes:
-int m_joy[]= {NOTE_F5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_AS5, 
-              NOTE_A5, NOTE_G4, NOTE_F4, NOTE_C5, NOTE_D5,
-              NOTE_D5, NOTE_E5, NOTE_E5, NOTE_F5, NOTE_F5,
-              NOTE_F5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_C5,
-              NOTE_AS5, NOTE_A5, NOTE_F5, NOTE_F5, NOTE_E5,
-              NOTE_D5, NOTE_C5, NOTE_B5, NOTE_B5, NOTE_AS5,
-              NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5,
-              NOTE_A5, NOTE_AS5, NOTE_C5, NOTE_AS5, NOTE_A5,
-              NOTE_G4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_A5,
-              NOTE_AS5, NOTE_A5, NOTE_G4, NOTE_F4, NOTE_F5,
-              NOTE_D5, NOTE_C5, NOTE_AS5, NOTE_A5, NOTE_B5,
-              NOTE_A5, NOTE_G4, NOTE_F4};
+int m_joy[]= {NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_AS4, 
+              NOTE_A3, NOTE_G3, NOTE_F3, NOTE_C4, NOTE_D4,
+              NOTE_D4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_F4,
+              NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_C4,
+              NOTE_AS4, NOTE_A4, NOTE_F4, NOTE_F4, NOTE_E4,
+              NOTE_D4, NOTE_C4, NOTE_B4, NOTE_B4, NOTE_AS4,
+              NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4,
+              NOTE_A4, NOTE_AS4, NOTE_C4, NOTE_AS4, NOTE_A4,
+              NOTE_G3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_A4,
+              NOTE_AS4, NOTE_A4, NOTE_G3, NOTE_F3, NOTE_F4,
+              NOTE_D4, NOTE_C4, NOTE_AS4, NOTE_A4, NOTE_B4,
+              NOTE_A4, NOTE_G3, NOTE_F3};
 
 // note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
 float nd_joy[] = {2, 2.667, 8, 1.333, 4,
@@ -230,5 +230,33 @@ float nd_joy[] = {2, 2.667, 8, 1.333, 4,
 int len_joy = 58;
 
 float speed_joy = 2;
+
+/********************************************************************
+ * SLEIGH RIDE *
+ ********************************************************************/
+
+// Melody notes:
+int m_sleighride[]= {NOTE_AS5, NOTE_AS5, NOTE_AS5,
+                     NOTE_AS5, NOTE_C6, NOTE_AS5, NOTE_G5, NOTE_DS5,
+                     NOTE_F5, NOTE_G5, NOTE_F5, NOTE_DS5, NOTE_C5,
+                     NOTE_AS4, NOTE_AS4,
+                     NOTE_C5, NOTE_D5, NOTE_DS5, NOTE_F5, NOTE_G5,
+                     NOTE_AS5, NOTE_C6, NOTE_AS5, NOTE_G5, NOTE_F5, NOTE_DS5,
+                     NOTE_F5, NOTE_F5, NOTE_G5, NOTE_F5, NOTE_DS5, NOTE_C5,
+                     NOTE_DS5};
+
+// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
+float nd_sleighride[] = {8, 8, 8,
+                         8, 8, 16, 16, 8,
+                         8, 8, 16, 16, 8,
+                         1.6, 16,
+                         16, 16, 16, 16, 16,
+                         8, 8, 16, 16, 16, 16,
+                         8, 16, 16, 16, 16, 8, 
+                         2};
+
+int len_sleighride = 33;
+
+float speed_sleighride = 1.1;
 
 #endif // PITCHES_H
