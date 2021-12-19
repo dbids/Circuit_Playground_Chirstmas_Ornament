@@ -14,12 +14,13 @@ enum state {
   WONDTIME,
   HLYNGHT,
   JOY,
-  SLEIGH,
+  SLEIGH
 } currState;
 
 bool leftButtonPressed;
 bool rightButtonPressed;
-//uint8_t pixeln = 0;
+uint8_t pixeln = 0;
+uint8_t* colorArray = calloc(10, sizeof(uint8_t));
 
 void setup() {
   Serial.begin(9600);
@@ -27,9 +28,12 @@ void setup() {
 
   CircuitPlayground.begin();
   CircuitPlayground.speaker.enable(false);
-  CircuitPlayground.setBrightness(100);
+  CircuitPlayground.setBrightness(30); 
 
   currState = WAKEUP;
+
+  for(uint8_t i = 0; i < 10; i ++)
+    colorArray[i] = i*5;
 }
 
 void loop() {
@@ -52,7 +56,7 @@ void loop() {
       CircuitPlayground.clearPixels();
 
       // Enter power down state with ADC and BOD module disabled.
-      //LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);
+      LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);
       delay(2000);
 
       currState = WAKEUP;
@@ -83,12 +87,15 @@ void loop() {
       }
       else
       {
-//          CircuitPlayground.setPixelColor(pixeln++, CircuitPlayground.colorWheel(25 * pixeln));
-//          if (pixeln == 11) 
-//          {
-//            pixeln = 0;
-//            CircuitPlayground.clearPixels();
-//          }
+          for(uint8_t p = 0; p < 10; p++)
+          {
+            CircuitPlayground.setPixelColor(p, CircuitPlayground.colorWheel(colorArray[p]));
+            colorArray[p] += 5;
+            if(colorArray[p] > 255)
+            {
+              colorArray[p] = 0;
+            }
+          }
       }
       break;
       
@@ -165,14 +172,14 @@ void loop() {
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState = JINGLE;
+        currState = LIGHTSHOW;
       }
       else if (rightButtonPressed)
       {
         playSong(m_sleighride, nd_sleighride, len_sleighride, speed_sleighride, 0);
       }
       break;
-  }
+    }
 
   delay(10);
 }

@@ -98,14 +98,13 @@
  * PLAY SONG FUNCTION *
  ********************************************************************/
 
-void playSong(int* melody, float* noteDuration, int len, float speed, uint8_t color_choice);
+void playSong(uint16_t* melody, char* noteDuration, uint8_t len, float speed, uint8_t color_choice);
 
 /********************************************************************
  * JINGLE BELLS *
  ********************************************************************/
 
-// Melody notes:
-int m_jinglebells[]= {NOTE_B4, NOTE_B4, NOTE_B4, 
+uint16_t m_jinglebells[]= {NOTE_B4, NOTE_B4, NOTE_B4, 
   NOTE_B4, NOTE_B4, NOTE_B4,
   NOTE_B4, NOTE_D5, NOTE_G4, NOTE_A4,
   NOTE_B4, 0,
@@ -114,18 +113,17 @@ int m_jinglebells[]= {NOTE_B4, NOTE_B4, NOTE_B4,
   NOTE_D5, NOTE_D5, NOTE_C5, NOTE_A4, 
   NOTE_G4};
 
-// note durations: 4 = quarter note, 8 = eighth note, etc.:
-float nd_jinglebells[] = {    
-  4, 4, 2, 
-  4, 4, 2, 
-  4, 4, 3, 8,
-  1, 4,
-  4, 4, 3, 8, 
-  4, 4, 4, 8, 8,
-  4, 4, 4, 4, 
-  1};
+char nd_jinglebells[] = {    
+  'q', 'q', 'h', 
+  'q', 'q', 'h', 
+  'q', 'q', 'p', 'e',
+  'w', 'q',
+  'q', 'q', 'p', 'e', 
+  'q', 'q', 'q', 'e', 'e',
+  'q', 'q', 'q', 'q', 
+  'w'};
 
-int len_jinglebells = 26;
+uint8_t len_jinglebells = 26;
 
 float speed_jinglebells = 2;
 
@@ -133,19 +131,17 @@ float speed_jinglebells = 2;
  * RUDOLPH THE RED NOSED REINDEER *
  ********************************************************************/
 
-// Melody notes:
-int m_rudolph[]= {NOTE_G4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4, NOTE_G4,
+uint16_t m_rudolph[]= {NOTE_G4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4, NOTE_G4,
                   NOTE_G4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_C5, NOTE_B4,
                   NOTE_F4, NOTE_G4, NOTE_F4, NOTE_D4, NOTE_B4, NOTE_A4, NOTE_G4,
                   NOTE_G4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_E4};
 
-// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
-float nd_rudolph[] = {4, 8, 8, 4, 4, 4, 1.333,
-                      8, 8, 8, 8, 4, 4, 1,
-                      4, 8, 8, 4, 4, 4, 1.333,
-                      8, 8, 8, 8, 4, 4, 1};
+char nd_rudolph[] = {'q', 'e', 'e', 'q', 'q', 'q', 'o',
+                      'e', 'e', 'e', 'e', 'q', 'q', 'w',
+                      'q', 'e', 'e', 'q', 'q', 'q', 'o',
+                      'e', 'e', 'e', 'e', 'q', 'q', 'w'};
 
-int len_rudolph = 28;
+uint8_t len_rudolph = 28;
 
 float speed_rudolph = 1.5;
 
@@ -153,8 +149,7 @@ float speed_rudolph = 1.5;
  * WONDERFUL_TIME *
  ********************************************************************/
 
-// Melody notes:
-int m_wonderfultime[]= {NOTE_E4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_C5, NOTE_A4, NOTE_G4, 0,
+uint16_t m_wonderfultime[]= {NOTE_E4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_C5, NOTE_A4, NOTE_G4, 0,
                         NOTE_F4, NOTE_D4, NOTE_C4,
                         NOTE_E4, NOTE_F4, NOTE_G4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_D4, NOTE_D4, NOTE_D4,
                         NOTE_E4, NOTE_F4, NOTE_G4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_F4, NOTE_A4, NOTE_C5,
@@ -162,16 +157,15 @@ int m_wonderfultime[]= {NOTE_E4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_C5, NOTE_A4, NO
                         NOTE_E4, NOTE_F4, NOTE_G4, NOTE_C4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_C5,
                         NOTE_A4, NOTE_G4, 0, NOTE_F4, NOTE_D4, NOTE_C4};
 
-// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
-float nd_wonderfultime[] = {8, 8, 2.667, 8, 8, 8, 2.667, 8,
-                            8, 8, 1.333,
-                            4, 8, 8, 8, 8, 8, 8, 8, 8,
-                            8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 1.333,
-                            8, 8, 8, 2.667, 8, 8, 8, 2, 8, 8, 8,
-                            8, 8, 8, 8, 8, 2, 8, 8, 2.667, 8, 8,
-                            8, 2.667, 8, 8, 8, 1.333};
+char nd_wonderfultime[] = {'e', 'e', 'p', 'e', 'e', 'e', 'p', 'e',
+                            'e', 'e', 'o',
+                            'q', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+                            'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'o',
+                            'e', 'e', 'e', 'p', 'e', 'e', 'e', 'h', 'e', 'e', 'e',
+                            'e', 'e', 'e', 'e', 'e', 'h', 'e', 'e', 'p', 'e', 'e',
+                            'e', 'p', 'e', 'e', 'e', 'o'};
 
-int len_wonderfultime = 60;
+uint8_t len_wonderfultime = 60;
 
 float speed_wonderfultime = 1;
 
@@ -179,19 +173,17 @@ float speed_wonderfultime = 1;
  * HOLY_NIGHT *
  ********************************************************************/
 
-// Melody notes:
-int m_holynight[]= {NOTE_E4, NOTE_E4, NOTE_E4, NOTE_G4,
+uint16_t m_holynight[]= {NOTE_E4, NOTE_E4, NOTE_E4, NOTE_G4,
                     NOTE_G4, NOTE_A4, NOTE_A4, NOTE_F4, NOTE_A4, NOTE_C5, 
                     NOTE_G4, NOTE_G4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_E4, NOTE_F4,
                     NOTE_G4, NOTE_F4, NOTE_D4, NOTE_C4};
 
-// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
-float nd_holynight[] = {2.667, 4, 8, 1.143,
-                        8, 4, 8, 4, 8, 1.333, 
-                        4, 8, 4, 8, 2.667, 4, 8,
-                        2.667, 4, 8, 0.667};
+char nd_holynight[] = {'p', 'q', 'e', 'i',
+                        'e', 'q', 'e', 'q', 'e', 'o', 
+                        'q', 'e', 'q', 'e', 'p', 'q', 'e',
+                        'p', 'q', 'e', 'u'};
 
-int len_holynight = 22;
+uint8_t len_holynight = 22;
 
 float speed_holynight = 1;
 
@@ -199,8 +191,7 @@ float speed_holynight = 1;
  * JOY_TO_THE_WORLD *
  ********************************************************************/
 
-// Melody notes:
-int m_joy[]= {NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_AS4, 
+uint16_t m_joy[]= {NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_AS4, 
               NOTE_A3, NOTE_G3, NOTE_F3, NOTE_C4, NOTE_D4,
               NOTE_D4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_F4,
               NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_C4,
@@ -213,21 +204,20 @@ int m_joy[]= {NOTE_F4, NOTE_E4, NOTE_D4, NOTE_C4, NOTE_AS4,
               NOTE_D4, NOTE_C4, NOTE_AS4, NOTE_A4, NOTE_B4,
               NOTE_A4, NOTE_G3, NOTE_F3};
 
-// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
-float nd_joy[] = {2, 2.667, 8, 1.333, 4,
-                  2, 2, 1.333, 4, 1.333,
-                  4, 1.333, 4, 0.571, 4,
-                  4, 4, 4, 4, 2.667,
-                  8, 4, 4, 4, 4,
-                  4, 4, 4, 2.667, 8,
-                  4, 4, 4, 4, 4,
-                  8, 8, 1.333, 8, 8,
-                  4, 4, 4, 8, 8,
-                  1.333, 8, 8, 4, 2,
-                  4, 2.667, 8, 4, 4,
-                  2, 2, 1};
+char nd_joy[] = {'h', 'p', 'e', 'o', 'q',
+                  'h', 'h', 'o', 'q', 'o',
+                  'q', 'o', 'q', 'y', 'q',
+                  'q', 'q', 'q', 'q', 'p',
+                  'e', 'q', 'q', 'q', 'q',
+                  'q', 'q', 'q', 'p', 'e',
+                  'q', 'q', 'q', 'q', 'q',
+                  'e', 'e', 'o', 'e', 'e',
+                  'q', 'q', 'q', 'e', 'e',
+                  'o', 'e', 'e', 'q', 'h',
+                  'q', 'p', 'e', 'q', 'q',
+                  'h', 'h', 'w'};
 
-int len_joy = 58;
+uint8_t len_joy = 58;
 
 float speed_joy = 2;
 
@@ -235,8 +225,9 @@ float speed_joy = 2;
  * SLEIGH RIDE *
  ********************************************************************/
 
-// Melody notes:
-int m_sleighride[]= {NOTE_AS5, NOTE_AS5, NOTE_AS5,
+uint8_t len_sleighride = 33;
+
+uint16_t m_sleighride[]= {NOTE_AS5, NOTE_AS5, NOTE_AS5,
                      NOTE_AS5, NOTE_C6, NOTE_AS5, NOTE_G5, NOTE_DS5,
                      NOTE_F5, NOTE_G5, NOTE_F5, NOTE_DS5, NOTE_C5,
                      NOTE_AS4, NOTE_AS4,
@@ -244,18 +235,16 @@ int m_sleighride[]= {NOTE_AS5, NOTE_AS5, NOTE_AS5,
                      NOTE_AS5, NOTE_C6, NOTE_AS5, NOTE_G5, NOTE_F5, NOTE_DS5,
                      NOTE_F5, NOTE_F5, NOTE_G5, NOTE_F5, NOTE_DS5, NOTE_C5,
                      NOTE_DS5};
+                                                                                                                                   
+char nd_sleighride[] = {'e', 'e', 'e',
+                         'e', 'e', 's', 's', 'e',
+                         'e', 'e', 's', 's', 'e',
+                         't', 's',
+                         's', 's', 's', 's', 's',
+                         'e', 'e', 's', 's', 's', 's',
+                         'e', 's', 's', 's', 's', 'e', 
+                         'h'};
 
-// note durations: 4 = quarter note, 8 = eighth note, 2.6667 = dotted quarter note etc.:
-float nd_sleighride[] = {8, 8, 8,
-                         8, 8, 16, 16, 8,
-                         8, 8, 16, 16, 8,
-                         1.6, 16,
-                         16, 16, 16, 16, 16,
-                         8, 8, 16, 16, 16, 16,
-                         8, 16, 16, 16, 16, 8, 
-                         2};
-
-int len_sleighride = 33;
 
 float speed_sleighride = 1.1;
 
