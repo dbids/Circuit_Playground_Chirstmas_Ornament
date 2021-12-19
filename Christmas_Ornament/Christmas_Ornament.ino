@@ -11,14 +11,14 @@ enum state {
   LIGHTSHOW,
   JINGLE,
   RUDOLPH,
-  WONDTIME,
+  CHRISTMAS,
   HLYNGHT,
   JOY,
   SLEIGH,
   FAITHFUL,
   HARK,
-  CHRISTMAS,
-  JOLLY
+  JOLLY,
+  WONDTIME,
 } currState;
 
 bool leftButtonPressed;
@@ -123,7 +123,7 @@ void loop() {
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState=WONDTIME;
+        currState=CHRISTMAS;
       }
       else if (rightButtonPressed)
       {
@@ -131,19 +131,20 @@ void loop() {
       }
       break;
 
-    case WONDTIME:
+      case CHRISTMAS:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState=HLYNGHT;
+        currState = HLYNGHT;
       }
       else if (rightButtonPressed)
       {
-        playSong(m_wonderfultime, nd_wonderfultime, len_wonderfultime, speed_wonderfultime, currState%2);
+        playSong(m_christmastree, nd_christmastree, len_christmastree, speed_christmastree, currState%2);
       }
       break;
+
     case HLYNGHT:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
@@ -157,19 +158,21 @@ void loop() {
         playSong(m_holynight, nd_holynight, len_holynight, speed_holynight, currState%2);
       }
       break;
+      
     case JOY:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState=SLEIGH;
+        currState = SLEIGH;
       }
       else if (rightButtonPressed)
       {
-        playSong(m_joy, nd_joy, len_joy, speed_joy, currState%2);
+        playSong(m_sleighride, nd_joy, len_joy, speed_joy, currState%2);
       }
       break;
+      
     case SLEIGH:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
@@ -183,6 +186,7 @@ void loop() {
         playSong(m_sleighride, nd_sleighride, len_sleighride, speed_sleighride, currState%2);
       }
       break;
+      
     case FAITHFUL:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
@@ -202,37 +206,39 @@ void loop() {
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState = CHRISTMAS;
+        currState = JOLLY;
       }
       else if (rightButtonPressed)
       {
         playSong(m_hark, nd_hark, len_hark, speed_hark, currState%2);
       }
       break;
-    case CHRISTMAS:
-      CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
-      if (leftButtonPressed)
-      {
-        delay(DEBOUNCE);
-        CircuitPlayground.clearPixels();
-        currState = JOLLY;
-      }
-      else if (rightButtonPressed)
-      {
-        playSong(m_christmastree, nd_christmastree, len_christmastree, speed_christmastree, currState%2);
-      }
-      break;
+      
     case JOLLY:
       CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
       if (leftButtonPressed)
       {
         delay(DEBOUNCE);
         CircuitPlayground.clearPixels();
-        currState = LIGHTSHOW;
+        currState = WONDTIME;
       }
       else if (rightButtonPressed)
       {
         playSong(m_hollyjolly, nd_hollyjolly, len_hollyjolly, speed_hollyjolly, currState%2);
+      }
+      break;
+
+    case WONDTIME:
+      CircuitPlayground.setPixelColor(currState-3, 255, 255, 0);
+      if (leftButtonPressed)
+      {
+        delay(DEBOUNCE);
+        CircuitPlayground.clearPixels();
+        currState=LIGHTSHOW;
+      }
+      else if (rightButtonPressed)
+      {
+        playSong(m_wonderfultime, nd_wonderfultime, len_wonderfultime, speed_wonderfultime, currState%2);
       }
       break;
     }

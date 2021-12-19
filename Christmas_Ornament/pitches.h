@@ -345,13 +345,13 @@ uint16_t m_christmastree[]= {NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_A4,
                              NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3, NOTE_A4,
                              NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_A4, 
                              NOTE_B4, NOTE_C4, NOTE_FS3, NOTE_A4, NOTE_G3,
-                             0, NOTE_D4, NOTE_D4, NOTE_B4, NOTE_E4, NOTE_D4, 
-                             NOTE_D4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4,
-                             NOTE_A4, NOTE_D4, NOTE_C4, NOTE_C4, NOTE_B4, 
-                             NOTE_B4, NOTE_D3, NOTE_G3, NOTE_G3, NOTE_G3,
-                             NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4,
-                             NOTE_A4, NOTE_B4, NOTE_C4, NOTE_FS3, NOTE_A4,
-                             NOTE_G3};
+                             0, NOTE_D4, NOTE_D4, NOTE_B4, NOTE_E4, 
+                             NOTE_D4, NOTE_D4, NOTE_C4, NOTE_C4, NOTE_C4, 
+                             NOTE_C4,NOTE_A4, NOTE_D4, NOTE_C4, NOTE_C4, 
+                             NOTE_B4, NOTE_B4, NOTE_D3, NOTE_G3, NOTE_G3, 
+                             NOTE_G3, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, 
+                             NOTE_B4, NOTE_A4, NOTE_B4, NOTE_C4, NOTE_FS3, 
+                             NOTE_A4, NOTE_G3};
                                                                                                                                    
 char nd_christmastree[] = {'q', 'p', 'e', 'q', 'q',
                            'p', 'e', 'p', 'e', 'q',
@@ -367,7 +367,7 @@ char nd_christmastree[] = {'q', 'p', 'e', 'q', 'q',
                            'e', 'e', 'e', 'q', 'q', 
                            'q', 'q'};
 
-uint8_t len_christmastree = 66;
+uint8_t len_christmastree = 62;
 
 float speed_christmastree = 1;
 
